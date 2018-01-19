@@ -1,0 +1,21 @@
+#!/usr/bin/awful
+
+!fun :fizzbuzz $number
+	!if :eq i0 :mod $n i5
+		!if :eq i0 :mod $n i3
+			:writeln s'FizzBuzz'
+		!else
+			:writeln s"Buzz"
+		!fi
+	!elif :eq i0 :mod $n i3
+		:writeln sxFizzx
+	!else
+		:writeln $n
+	!fi
+!nuf
+
+
+:set &n i1
+!repeat
+	:fizzbuzz $n
+!until :lt i100 :add &n i1
